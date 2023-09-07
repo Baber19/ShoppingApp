@@ -1,74 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/colors.dart';
 import 'package:shopping_app/screens/categories_screen_2/categories_screen_2.dart';
 
-List<CategoryScreenFoodCard> categoryScreenFoodCardList = const [
+List<CategoryScreenFoodCard> categoryScreenFoodCardList = [
   CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
-    itemTitle: "Fish",
+    itemImage: "lib/assets/images/fish.svg",
+    itemTitle: "Fishes",
     itemType: "From Sea",
   ),
   CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
-    itemTitle: "Fish",
+    itemImage: "lib/assets/images/meat.svg",
+    itemTitle: "Meat",
+    itemType: "Organic",
+  ),
+  CategoryScreenFoodCard(
+    itemImage: "lib/assets/images/veg.svg",
+    itemTitle: "Vegitables",
     itemType: "From Sea",
   ),
   CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
-    itemTitle: "Fish",
+    itemImage: "lib/assets/images/fruits.svg",
+    itemTitle: "Fruits",
+    itemType: "Organic",
+  ),
+  CategoryScreenFoodCard(
+    itemImage: "lib/assets/images/fish.svg",
+    itemTitle: "Fishes",
     itemType: "From Sea",
   ),
   CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
-    itemTitle: "Fish",
+    itemImage: "lib/assets/images/meat.svg",
+    itemTitle: "Meat",
+    itemType: "Organic",
+  ),
+  CategoryScreenFoodCard(
+    itemImage: "lib/assets/images/veg.svg",
+    itemTitle: "Fishes",
     itemType: "From Sea",
   ),
   CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
-    itemTitle: "Fish",
-    itemType: "From Sea",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
-    itemTitle: "Fish",
-    itemType: "From Sea",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
-    itemTitle: "Fish",
-    itemType: "From Sea",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
-    itemTitle: "Fish",
-    itemType: "From Sea",
+    itemImage: "lib/assets/images/fruits.svg",
+    itemTitle: "Meat",
+    itemType: "Organic",
   ),
 ];
 
-class CategoryScreenFoodCard extends StatefulWidget {
+class CategoryScreenFoodCard extends StatelessWidget {
   final String itemImage;
   final String itemTitle;
   final String itemType;
 
-  const CategoryScreenFoodCard(
-      {Key? key, // Use 'Key?' here
-      required this.itemImage,
-      required this.itemTitle,
-      required this.itemType})
-      : super(key: key); // Make sure to pass 'key' to super constructor
+  const CategoryScreenFoodCard({
+    required this.itemImage,
+    required this.itemTitle,
+    required this.itemType,
+  });
 
-  @override
-  State<CategoryScreenFoodCard> createState() => _SubFoodCardState2();
-}
-
-class _SubFoodCardState2 extends State<CategoryScreenFoodCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const CategoriesScreen2()),
+          MaterialPageRoute(
+            builder: ((context) => const CategoriesScreen2()),
+          ),
         );
       },
       child: Container(
@@ -82,11 +79,11 @@ class _SubFoodCardState2 extends State<CategoryScreenFoodCard> {
               height: 15,
             ),
             ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                widget.itemImage,
+              borderRadius: BorderRadius.circular(20),
+              child: SvgPicture.asset(
+                itemImage,
                 height: 75,
-                width: 75,
+                width: 95,
               ),
             ),
             const SizedBox(
@@ -102,7 +99,7 @@ class _SubFoodCardState2 extends State<CategoryScreenFoodCard> {
               height: 10,
             ),
             Text(
-              widget.itemTitle,
+              itemTitle,
               style: const TextStyle(
                   fontFamily: "Manrope",
                   fontSize: 18,
@@ -113,7 +110,7 @@ class _SubFoodCardState2 extends State<CategoryScreenFoodCard> {
               height: 10,
             ),
             Text(
-              widget.itemType,
+              itemType,
               style: const TextStyle(
                   fontFamily: "Manrope",
                   fontSize: 16,

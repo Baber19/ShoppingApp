@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../constants/colors.dart';
 
 List<FoodCard> discountFoodCardList = const [
   FoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
+      itemImage: "lib/assets/images/meat.svg",
       text1: "Get",
       text2: "50% off",
       text3: "On First 3 Orders"),
   FoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
+      itemImage: "lib/assets/images/meat.svg",
       text1: "Get",
-      text2: "Your Orders",
+      text2: "Orders",
       text3: "On Time"),
   FoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
+      itemImage: "lib/assets/images/meat.svg",
       text1: "Free",
       text2: "Delivery",
       text3: "On Above 250\$"),
   FoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
+      itemImage: "lib/assets/images/meat.svg",
       text1: "Get",
       text2: "50% off",
       text3: "On First 3 Orders"),
   FoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
+      itemImage: "lib/assets/images/meat.svg",
       text1: "Get",
       text2: "50% off",
       text3: "On First 3 Orders"),
@@ -65,7 +66,7 @@ class _FoodCardState extends State<FoodCard> {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
+                  child: SvgPicture.asset(
                     widget.itemImage,
                     width: 80,
                     height: 110,

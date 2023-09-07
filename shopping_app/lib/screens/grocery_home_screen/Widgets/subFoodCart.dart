@@ -1,26 +1,87 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/constants/colors.dart';
 
 List<SubFoodCard> subFoodCardList = const [
   SubFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemTitle: "Green Tea",
+      itemImage: "lib/assets/images/fish.svg",
+      itemTitle: "Fish",
       itemPrice: "6\$"),
   SubFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemTitle: "Green Tea",
+      itemImage: "lib/assets/images/Fruits.svg",
+      itemTitle: "Fresh Fruits",
+      itemPrice: "9\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/veg.svg",
+      itemTitle: "Green Vegitables",
+      itemPrice: "3\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/meat.svg",
+      itemTitle: "Fresh Meat",
       itemPrice: "6\$"),
   SubFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemTitle: "Green Tea",
+      itemImage: "lib/assets/images/fish.svg",
+      itemTitle: "Fish",
       itemPrice: "6\$"),
   SubFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemTitle: "Green Tea",
+      itemImage: "lib/assets/images/Fruits.svg",
+      itemTitle: "Fresh Fruits",
+      itemPrice: "9\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/veg.svg",
+      itemTitle: "Green Vegitables",
+      itemPrice: "3\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/meat.svg",
+      itemTitle: "Fresh Meat",
       itemPrice: "6\$"),
   SubFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemTitle: "Green Tea",
+      itemImage: "lib/assets/images/fish.svg",
+      itemTitle: "Fish",
+      itemPrice: "6\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/Fruits.svg",
+      itemTitle: "Fresh Fruits",
+      itemPrice: "9\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/veg.svg",
+      itemTitle: "Green Vegitables",
+      itemPrice: "3\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/meat.svg",
+      itemTitle: "Fresh Meat",
+      itemPrice: "6\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/fish.svg",
+      itemTitle: "Fish",
+      itemPrice: "6\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/Fruits.svg",
+      itemTitle: "Fresh Fruits",
+      itemPrice: "9\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/veg.svg",
+      itemTitle: "Green Vegitables",
+      itemPrice: "3\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/meat.svg",
+      itemTitle: "Fresh Meat",
+      itemPrice: "6\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/fish.svg",
+      itemTitle: "Fish",
+      itemPrice: "6\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/Fruits.svg",
+      itemTitle: "Fresh Fruits",
+      itemPrice: "9\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/veg.svg",
+      itemTitle: "Green Vegitables",
+      itemPrice: "3\$"),
+  SubFoodCard(
+      itemImage: "lib/assets/images/meat.svg",
+      itemTitle: "Fresh Meat",
       itemPrice: "6\$"),
 ];
 
@@ -30,116 +91,143 @@ class SubFoodCard extends StatefulWidget {
   final String itemPrice;
 
   const SubFoodCard({
-    Key? key, // Use 'Key?' here
+    Key? key,
     required this.itemImage,
     required this.itemTitle,
     required this.itemPrice,
-  }) : super(key: key); // Make sure to pass 'key' to super constructor
+  }) : super(key: key);
 
   @override
   State<SubFoodCard> createState() => _SubFoodCardState();
 }
 
 class _SubFoodCardState extends State<SubFoodCard> {
+  bool isFavPressed = true;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          height: 230,
-          width: 150,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14),
-              color: MyColors.greyColor),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 15,
+        Stack(
+          children: [
+            Container(
+              height: 230,
+              width: 150,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14),
+                color: MyColors.greyColor,
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.asset(
-                  widget.itemImage,
-                  height: 75,
-                  width: 75,
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Divider(
-                color: Colors.grey,
-                thickness: 2.0,
-                indent: 20,
-                endIndent: 20,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+              child: Column(
                 children: [
-                  Text(
-                    widget.itemTitle,
-                    style: const TextStyle(
-                        fontFamily: "Manrope",
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black),
+                  const SizedBox(
+                    height: 15,
                   ),
-                  const Text(
-                    "Organic",
-                    style: TextStyle(
-                        fontFamily: "Manrope",
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: MyColors.greyLighColor),
+                  ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(25)),
+                    child: SvgPicture.asset(
+                      widget.itemImage,
+                      height: 75,
+                      width: 75,
+                    ),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 10,
                   ),
-                  Container(
-                    width: 120,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: 8,
+                  const Divider(
+                    color: Colors.grey,
+                    thickness: 2.0,
+                    indent: 20,
+                    endIndent: 20,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.itemTitle,
+                        style: const TextStyle(
+                          fontFamily: "Manrope",
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
                         ),
-                        const Text(
-                          "unit",
-                          style: TextStyle(
-                              fontFamily: "Manrope",
-                              fontSize: 13,
-                              fontWeight: FontWeight.w600,
-                              color: MyColors.darkYellowColor),
+                      ),
+                      const Text(
+                        "Organic",
+                        style: TextStyle(
+                          fontFamily: "Manrope",
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: MyColors.greyLighColor,
                         ),
-                        SizedBox(
-                          width: 8,
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Container(
+                        width: 120,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        Text(
-                          widget.itemPrice,
-                          style: const TextStyle(
-                              fontFamily: "Manrope",
-                              fontSize: 17,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                              width: 8,
+                            ),
+                            const Text(
+                              "unit",
+                              style: TextStyle(
+                                fontFamily: "Manrope",
+                                fontSize: 13,
+                                fontWeight: FontWeight.w600,
+                                color: MyColors.darkYellowColor,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            Text(
+                              widget.itemPrice,
+                              style: const TextStyle(
+                                fontFamily: "Manrope",
+                                fontSize: 17,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                            const Spacer(),
+                            const Icon(
+                              Icons.add_circle_outlined,
+                              color: MyColors.darkBlueColor,
+                              size: 28,
+                            ),
+                          ],
                         ),
-                        const Spacer(),
-                        const Icon(
-                          Icons.add_circle_outlined,
-                          color: MyColors.darkBlueColor,
-                          size: 28,
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+            Positioned(
+              top: 5, // Adjust the top position as needed
+              left: 5, // Adjust the left position as needed
+              child: IconButton(
+                onPressed: () {
+                  // Handle favorite button press
+                  setState(() {
+                    isFavPressed = !isFavPressed;
+                  });
+                },
+                icon: Icon(
+                  isFavPressed ? Icons.favorite_border : Icons.favorite,
+                  color: MyColors.darkBlueColor,
+                ),
+              ),
+            ),
+          ],
         ),
         const SizedBox(
           width: 13,
@@ -148,3 +236,145 @@ class _SubFoodCardState extends State<SubFoodCard> {
     );
   }
 }
+
+// class SubFoodCard extends StatefulWidget {
+//   final String itemImage;
+//   final String itemTitle;
+//   final String itemPrice;
+
+//   const SubFoodCard({
+//     Key? key, // Use 'Key?' here
+//     required this.itemImage,
+//     required this.itemTitle,
+//     required this.itemPrice,
+//   }) : super(key: key); // Make sure to pass 'key' to super constructor
+
+//   @override
+//   State<SubFoodCard> createState() => _SubFoodCardState();
+// }
+
+// class _SubFoodCardState extends State<SubFoodCard> {
+//   bool isFavPressed = true;
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       children: [
+//         Stack(children: [
+//           Container(
+//             height: 260,
+//             width: 150,
+//             decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(14),
+//                 color: MyColors.greyColor),
+//             child: Column(
+//               children: [
+//                 // const SizedBox(
+//                 //   height: 15,
+//                 // ),
+//                 Positioned(
+//                   bottom: 1,
+//                   right: 2,
+//                   child: IconButton(
+//                     onPressed: () {
+//                       setState(() {
+//                         isFavPressed = !isFavPressed;
+//                       });
+//                     },
+//                     icon: Icon(
+//                         isFavPressed ? Icons.favorite_border : Icons.favorite,
+//                         color: MyColors.darkBlueColor),
+//                   ),
+//                 ),
+//                 ClipRRect(
+//                   borderRadius: BorderRadius.circular(10),
+//                   child: Image.asset(
+//                     widget.itemImage,
+//                     height: 75,
+//                     width: 75,
+//                   ),
+//                 ),
+//                 const SizedBox(
+//                   height: 10,
+//                 ),
+//                 const Divider(
+//                   color: Colors.grey,
+//                   thickness: 2.0,
+//                   indent: 20,
+//                   endIndent: 20,
+//                 ),
+//                 Column(
+//                   mainAxisAlignment: MainAxisAlignment.start,
+//                   children: [
+//                     Text(
+//                       widget.itemTitle,
+//                       style: const TextStyle(
+//                           fontFamily: "Manrope",
+//                           fontSize: 17,
+//                           fontWeight: FontWeight.w600,
+//                           color: Colors.black),
+//                     ),
+//                     const Text(
+//                       "Organic",
+//                       style: TextStyle(
+//                           fontFamily: "Manrope",
+//                           fontSize: 14,
+//                           fontWeight: FontWeight.w400,
+//                           color: MyColors.greyLighColor),
+//                     ),
+//                     const SizedBox(
+//                       height: 5,
+//                     ),
+//                     Container(
+//                       width: 120,
+//                       height: 30,
+//                       decoration: BoxDecoration(
+//                         color: Colors.white,
+//                         borderRadius: BorderRadius.circular(12),
+//                       ),
+//                       child: Row(
+//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                         children: [
+//                           SizedBox(
+//                             width: 8,
+//                           ),
+//                           const Text(
+//                             "unit",
+//                             style: TextStyle(
+//                                 fontFamily: "Manrope",
+//                                 fontSize: 13,
+//                                 fontWeight: FontWeight.w600,
+//                                 color: MyColors.darkYellowColor),
+//                           ),
+//                           SizedBox(
+//                             width: 8,
+//                           ),
+//                           Text(
+//                             widget.itemPrice,
+//                             style: const TextStyle(
+//                                 fontFamily: "Manrope",
+//                                 fontSize: 17,
+//                                 fontWeight: FontWeight.w600,
+//                                 color: Colors.black),
+//                           ),
+//                           const Spacer(),
+//                           const Icon(
+//                             Icons.add_circle_outlined,
+//                             color: MyColors.darkBlueColor,
+//                             size: 28,
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ]),
+//         const SizedBox(
+//           width: 13,
+//         )
+//       ],
+//     );
+//   }
+// }

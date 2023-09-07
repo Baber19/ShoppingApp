@@ -1,48 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/colors.dart';
 import 'package:shopping_app/screens/product_details_screen/product_details_screen.dart';
 
 List<ProductFoodCard> ProductFoodCardList = const [
   ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
+      itemImage: "lib/assets/images/fish.svg",
       itemPrice: "\$325",
       itemType: "Thin Choice Top Oranges"),
-  ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemPrice: "\$325",
-      itemType: "Orange"),
-  ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemPrice: "\$325",
-      itemType: "Orange"),
-  ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemPrice: "\$325",
-      itemType: "Orange"),
-  ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemPrice: "\$325",
-      itemType: "Orange"),
-  ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemPrice: "\$325",
-      itemType: "Orange"),
-  ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemPrice: "\$325",
-      itemType: "Orange"),
-  ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemPrice: "\$325",
-      itemType: "Orange"),
-  ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemPrice: "\$325",
-      itemType: "Orange"),
-  ProductFoodCard(
-      itemImage: "lib/assets/images/green_tea.jpg",
-      itemPrice: "\$325",
-      itemType: "Orange"),
 ];
 
 class ProductFoodCard extends StatefulWidget {
@@ -86,7 +51,7 @@ class _SubFoodCardState2 extends State<ProductFoodCard> {
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
+              child: SvgPicture.asset(
                 widget.itemImage,
                 height: 75,
                 width: 75,

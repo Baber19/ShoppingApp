@@ -11,6 +11,14 @@ class CheckOutScreen extends StatefulWidget {
 }
 
 class _CheckOutScreenState extends State<CheckOutScreen> {
+  bool isSelected = false;
+
+  void toggleContainer() {
+    setState(() {
+      isSelected = !isSelected;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +44,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   height: 40,
                 ),
                 Text(
-                  "Shopping Cart",
+                  "Check Out",
                   style: TextStyle(
                       fontFamily: "Manrope",
                       fontSize: 20,
@@ -59,138 +67,148 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
             SizedBox(
               height: 30,
             ),
-            Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.15,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
+            GestureDetector(
+              onTap: toggleContainer,
+              child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.15,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(15),
+                  ),
+                  border: Border.all(
+                    color: isSelected
+                        ? MyColors.darkYellowColor
+                        : MyColors.greyColor,
+                    width: 2,
+                  ),
                 ),
-                border: Border.all(
-                  color: MyColors.darkYellowColor,
-                  width: 2,
-                ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 14.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Home",
-                          style: TextStyle(
-                              fontFamily: "Manrope",
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: MyColors.headingGreyColors),
-                        ),
-                        Icon(
-                          Icons.check_circle_outline_outlined,
-                          size: 24,
-                        )
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          "Green Way 3000, Sylhet",
-                          style: TextStyle(
-                              fontFamily: "Manrope",
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.black),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            "               Edit",
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 14.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Home",
                             style: TextStyle(
                                 fontFamily: "Manrope",
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w500,
-                                color: MyColors.blueColor),
+                                color: MyColors.headingGreyColors),
                           ),
-                        ),
-                      ],
-                    )
-                  ],
+                          Icon(
+                            Icons.check_circle_outline_outlined,
+                            size: 24,
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "Green Way 3000, Sylhet",
+                            style: TextStyle(
+                                fontFamily: "Manrope",
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              "               Edit",
+                              style: TextStyle(
+                                  fontFamily: "Manrope",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  color: MyColors.blueColor),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.15,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
+            GestureDetector(
+              onTap: toggleContainer,
+              child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.15,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(15),
+                  ),
+                  border: Border.all(
+                    color: isSelected
+                        ? MyColors.greyColor
+                        : MyColors.darkYellowColor,
+                    width: 2,
+                  ),
                 ),
-                border: Border.all(
-                  color: MyColors.darkYellowColor,
-                  width: 2,
-                ),
-              ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 14.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Office",
-                          style: TextStyle(
-                              fontFamily: "Manrope",
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: MyColors.headingGreyColors),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          "\nMedical road, Halal lab,\nSunamganj",
-                          style: TextStyle(
-                              fontFamily: "Manrope",
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.black),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            "               Edit",
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 14.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Office",
                             style: TextStyle(
                                 fontFamily: "Manrope",
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w500,
-                                color: MyColors.blueColor),
+                                color: MyColors.headingGreyColors),
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    )
-                  ],
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "\nMedical road, Halal lab,\nSunamganj",
+                            style: TextStyle(
+                                fontFamily: "Manrope",
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              "               Edit",
+                              style: TextStyle(
+                                  fontFamily: "Manrope",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  color: MyColors.blueColor),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

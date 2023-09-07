@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/widgets/Buttons/blue_button.dart';
 import 'package:shopping_app/constants/colors.dart';
 import 'package:shopping_app/screens/add_to_cart_screen/add_to_cart_screen.dart';
@@ -30,8 +31,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(30),
-              child: Image.asset(
-                "lib/assets/images/green_tea.jpg",
+              child: SvgPicture.asset(
+                "lib/assets/images/fruits.svg",
                 height: 130,
                 width: 130,
               ),

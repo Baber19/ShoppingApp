@@ -1,39 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/colors.dart';
 
 import '../../product_screen/product_screen.dart';
 
 List<CategoryScreen2FoodCard> categoryScreen2FoodCardList = const [
   CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
+    itemImage: "lib/assets/images/fish.svg",
     itemTitle: "Big & Small Fishes",
     itemType: "Fresh from Sea",
     itemPrice: "\$36/KG",
     containerColor: Color.fromARGB(255, 231, 223, 151),
   ),
   CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
+    itemImage: "lib/assets/images/fish.svg",
     itemTitle: "Big & Small Fishes",
     itemType: "Fresh from Sea",
     itemPrice: "\$36/KG",
     containerColor: Color.fromARGB(255, 127, 43, 180),
   ),
   CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
+    itemImage: "lib/assets/images/fish.svg",
     itemTitle: "Big & Small Fishes",
     itemType: "Fresh from Sea",
     itemPrice: "\$36/KG",
     containerColor: Color.fromARGB(255, 114, 208, 122),
   ),
   CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
+    itemImage: "lib/assets/images/fish.svg",
     itemTitle: "Big & Small Fishes",
     itemType: "Fresh from Sea",
     itemPrice: "\$36/KG",
     containerColor: Color.fromARGB(255, 183, 120, 78),
   ),
   CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/green_tea.jpg",
+    itemImage: "lib/assets/images/fish.svg",
     itemTitle: "Big & Small Fishes",
     itemType: "Fresh from Sea",
     itemPrice: "\$36/KG",
@@ -80,7 +81,7 @@ class _CategoryScreen2FoodCardState extends State<CategoryScreen2FoodCard> {
                 color: widget.containerColor,
                 borderRadius: BorderRadius.circular(13)),
             child: Center(
-              child: Image.asset(
+              child: SvgPicture.asset(
                 widget.itemImage,
                 width: 100,
                 height: 100,
