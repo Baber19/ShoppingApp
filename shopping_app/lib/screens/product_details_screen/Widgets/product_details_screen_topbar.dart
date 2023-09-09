@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screens/product_screen/product_screen.dart';
 
 class ProductDetailsScreenTopBar extends StatefulWidget {
   const ProductDetailsScreenTopBar({super.key});
@@ -12,7 +13,7 @@ class _ProductDetailsScreenTopBarState
     extends State<ProductDetailsScreenTopBar> {
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         SizedBox(
           height: 50,
@@ -20,11 +21,22 @@ class _ProductDetailsScreenTopBarState
         SizedBox(
           width: 20,
         ),
-        Icon(
-          Icons.arrow_back_ios_new_outlined,
-          color: Color.fromARGB(255, 124, 131, 145),
-          size: 18,
+        IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProductsScreen()),
+            );
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios_new_outlined,
+          ),
         ),
+        // Icon(
+        //   Icons.arrow_back_ios_new_outlined,
+        //   color: Color.fromARGB(255, 124, 131, 145),
+        //   size: 18,
+        // ),
         SizedBox(
           width: 40,
         ),

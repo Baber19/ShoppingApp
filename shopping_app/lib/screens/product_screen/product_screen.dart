@@ -53,7 +53,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
           )
         ],
       ),

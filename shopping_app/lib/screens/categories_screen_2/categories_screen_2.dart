@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/screens/categories_screen_2/Widgets/categoriesScreen2FoodCard.dart';
-import 'package:shopping_app/screens/categories_screen_2/Widgets/itemType.dart';
-import 'package:shopping_app/widgets/bottomNavBar.dart';
 
-import '../categories_screen_1/Widgets/categoryScreenTopBanner.dart';
+import 'Widgets/categoriesScreen2FoodCard.dart';
+import 'Widgets/itemType.dart';
+import 'Widgets/topbanner.dart';
 
 class CategoriesScreen2 extends StatefulWidget {
   const CategoriesScreen2({super.key});
@@ -19,7 +18,7 @@ class _CategoriesScreen2State extends State<CategoriesScreen2> {
       extendBodyBehindAppBar: true,
       body: Column(
         children: [
-          const CategoryScreen1TopBanner(),
+          const CategoryScreen2TopBanner(),
           const SizedBox(
             height: 15,
           ),
@@ -46,7 +45,7 @@ class _CategoriesScreen2State extends State<CategoriesScreen2> {
               },
             ),
           ),
-          const NavBar()
+          // const BottomNavBar()
         ],
       ),
     );

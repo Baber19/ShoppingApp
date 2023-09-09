@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/add_new_card_screen/Widget/card_text_field.dart';
+import 'package:shopping_app/screens/check_out_screen/check_out_screen.dart';
 import 'package:shopping_app/widgets/Buttons/blue_button.dart';
 
 import '../../constants/colors.dart';
+import '../confirmed_order_screem/confirmed_order_screem.dart';
 
 class AddNewCardScreen extends StatelessWidget {
   const AddNewCardScreen({super.key});
@@ -22,10 +24,22 @@ class AddNewCardScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios_new_outlined,
-                    color: Color.fromARGB(255, 30, 34, 43),
-                    size: 18,
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CheckOutScreen()),
+                      );
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios_new_outlined,
+                      color: Color.fromARGB(255, 30, 34, 43),
+                    ),
+
+                    // icon : Icons.arrow_back_ios_new_outlined,
+                    // color: Color.fromARGB(255, 30, 34, 43),
+                    // size: 18,
                   ),
                   SizedBox(
                     width: 20,
@@ -179,7 +193,7 @@ class AddNewCardScreen extends StatelessWidget {
                 height: 70,
               ),
               Container(
-                height: 255,
+                height: 295,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   color: MyColors.greyColor,
@@ -188,7 +202,7 @@ class AddNewCardScreen extends StatelessWidget {
                     topRight: Radius.circular(30),
                   ),
                 ),
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -265,10 +279,20 @@ class AddNewCardScreen extends StatelessWidget {
                       SizedBox(
                         height: 25,
                       ),
-                      BlueButton(
-                          height: 59,
-                          width: double.infinity,
-                          buttonText: "Make Payment")
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ConfirmedOrderScreen(),
+                            ),
+                          );
+                        },
+                        child: BlueButton(
+                            height: 59,
+                            width: double.infinity,
+                            buttonText: "Make Payment"),
+                      )
                     ],
                   ),
                 ),

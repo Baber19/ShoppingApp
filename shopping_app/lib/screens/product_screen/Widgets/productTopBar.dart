@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screens/categories_screen_2/categories_screen_2.dart';
 
 class ProductTopBar extends StatefulWidget {
   const ProductTopBar({super.key});
@@ -10,7 +11,7 @@ class ProductTopBar extends StatefulWidget {
 class _ProductTopBarState extends State<ProductTopBar> {
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         SizedBox(
           height: 50,
@@ -18,10 +19,17 @@ class _ProductTopBarState extends State<ProductTopBar> {
         SizedBox(
           width: 20,
         ),
-        Icon(
-          Icons.arrow_back_ios_new_outlined,
-          color: Color.fromARGB(255, 30, 34, 43),
-          size: 18,
+        IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const CategoriesScreen2()),
+            );
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios_new_outlined,
+          ),
         ),
         SizedBox(
           width: 40,

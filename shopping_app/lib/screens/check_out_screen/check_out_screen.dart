@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/colors.dart';
 import 'package:shopping_app/screens/add_new_card_screen/add_new_card_screen.dart';
+import 'package:shopping_app/screens/add_to_cart_screen/add_to_cart_screen.dart';
 import 'package:shopping_app/widgets/Buttons/blue_button.dart';
 
 class CheckOutScreen extends StatefulWidget {
@@ -32,11 +33,24 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
             ),
             Row(
               children: [
-                Icon(
-                  Icons.arrow_back_ios_new_outlined,
-                  color: Color.fromARGB(255, 30, 34, 43),
-                  size: 18,
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AddToCartScreen()),
+                    );
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios_new_outlined,
+                  ),
                 ),
+                //   color: Color.fromARGB(255, 30, 34, 43),))
+                // Icon(
+                //   Icons.arrow_back_ios_new_outlined,
+                //   color: Color.fromARGB(255, 30, 34, 43),
+                //   size: 18,
+                // ),
                 SizedBox(
                   width: 20,
                 ),

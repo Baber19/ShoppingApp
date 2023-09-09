@@ -14,6 +14,9 @@ class ProductDetailsScreen extends StatefulWidget {
 }
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
+  bool isNutritionVisible = false;
+  bool isReviewVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,10 +49,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 height: double.infinity,
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                    color: MyColors.greyColor,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30))),
+                  color: MyColors.greyColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15.0),
                   child: Column(
@@ -60,11 +65,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         height: 20,
                       ),
                       const Text(
-                        "Thin Choise Top\nOranges",
+                        "Thin Choice Top\nOranges",
                         style: TextStyle(
-                            fontSize: 25,
-                            fontFamily: "Manrope",
-                            fontWeight: FontWeight.w800),
+                          fontSize: 25,
+                          fontFamily: "Manrope",
+                          fontWeight: FontWeight.w800,
+                        ),
                       ),
                       const SizedBox(
                         height: 20,
@@ -74,10 +80,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           Text(
                             "\$34.70\\KG",
                             style: TextStyle(
-                                fontSize: 18,
-                                fontFamily: "Manrope",
-                                fontWeight: FontWeight.w800,
-                                color: MyColors.blueColor),
+                              fontSize: 18,
+                              fontFamily: "Manrope",
+                              fontWeight: FontWeight.w800,
+                              color: MyColors.blueColor,
+                            ),
                           ),
                           SizedBox(
                             width: 20,
@@ -85,19 +92,21 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           Text(
                             "\$22.04 OFF",
                             style: TextStyle(
-                                fontSize: 18,
-                                fontFamily: "Manrope",
-                                fontWeight: FontWeight.w500,
-                                color: MyColors.darkBlueColor),
+                              fontSize: 18,
+                              fontFamily: "Manrope",
+                              fontWeight: FontWeight.w500,
+                              color: MyColors.darkBlueColor,
+                            ),
                           ),
                           Spacer(),
                           Text(
                             "Reg : \$56.70 USD",
                             style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: "Manrope",
-                                fontWeight: FontWeight.w500,
-                                color: Color.fromARGB(255, 138, 146, 161)),
+                              fontSize: 16,
+                              fontFamily: "Manrope",
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 138, 146, 161),
+                            ),
                           ),
                         ],
                       ),
@@ -134,7 +143,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       const SizedBox(
                         height: 30,
                       ),
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -146,16 +155,51 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               color: MyColors.headingGreyColors,
                             ),
                           ),
-                          Spacer(),
-                          Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: MyColors.headingGreyColors,
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                isNutritionVisible = !isNutritionVisible;
+                                isReviewVisible = false;
+                              });
+                            },
+                            child: Icon(
+                              isNutritionVisible
+                                  ? Icons.keyboard_arrow_up_rounded
+                                  : Icons.keyboard_arrow_down_rounded,
+                              color: MyColors.headingGreyColors,
+                            ),
                           ),
                         ],
                       ),
                       const SizedBox(
                         height: 15,
                       ),
+                      isNutritionVisible
+                          ? Expanded(
+                              child: SingleChildScrollView(
+                                child: Container(
+                                  // height: double.infinity,
+                                  width: double.infinity,
+                                  decoration: const BoxDecoration(
+                                    color: MyColors.greyColor,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(30),
+                                      topRight: Radius.circular(30),
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "Nutrition Details",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          : Container(),
                       const Divider(
                         indent: 10,
                         thickness: 2,
@@ -163,11 +207,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       const SizedBox(
                         height: 15,
                       ),
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Riviews",
+                            "Reviews",
                             style: TextStyle(
                               fontFamily: "Manrope",
                               fontSize: 20,
@@ -175,48 +219,85 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               color: MyColors.headingGreyColors,
                             ),
                           ),
-                          Spacer(),
-                          Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: MyColors.headingGreyColors,
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                isReviewVisible = !isReviewVisible;
+                                isNutritionVisible = false;
+                              });
+                            },
+                            child: Icon(
+                              isReviewVisible
+                                  ? Icons.keyboard_arrow_up_rounded
+                                  : Icons.keyboard_arrow_down_rounded,
+                              color: MyColors.headingGreyColors,
+                            ),
                           ),
                         ],
                       ),
                       const SizedBox(
                         height: 20,
                       ),
+                      isReviewVisible
+                          ? Expanded(
+                              child: SingleChildScrollView(
+                                child: Container(
+                                  width: double.infinity,
+                                  decoration: const BoxDecoration(
+                                    color: MyColors.greyColor,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(30),
+                                      topRight: Radius.circular(30),
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "Product Reviews",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          : Container(),
                       Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const AddToCartScreen()),
-                                );
-                              },
-                              child: const WhiteButton(
-                                  height: 65,
-                                  width: 170,
-                                  buttonText: "Add To Cart"),
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const AddToCartScreen(),
+                                ),
+                              );
+                            },
+                            child: const WhiteButton(
+                              height: 65,
+                              width: 170,
+                              buttonText: "Add To Cart",
                             ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const AddToCartScreen()),
-                                );
-                              },
-                              child: const BlueButton(
-                                  height: 65,
-                                  width: 170,
-                                  buttonText: "Buy Now"),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const AddToCartScreen(),
+                                ),
+                              );
+                            },
+                            child: const BlueButton(
+                              height: 65,
+                              width: 170,
+                              buttonText: "Buy Now",
                             ),
-                          ])
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

@@ -1,92 +1,53 @@
-// ignore_for_file: avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shopping_app/constants/colors.dart';
 import 'package:shopping_app/screens/grocery_home_screen/main_screen.dart';
-import 'package:shopping_app/widgets/Buttons/white_button.dart';
 
-class OnBoardScreen1 extends StatefulWidget {
-  const OnBoardScreen1({super.key});
+import '../../widgets/Buttons/custom_button.dart';
+import 'Widgets/topData.dart';
+
+class OnBoardingScreen extends StatefulWidget {
+  const OnBoardingScreen({super.key});
 
   @override
-  State<OnBoardScreen1> createState() => _OnBoardScreen1State();
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
 
-class _OnBoardScreen1State extends State<OnBoardScreen1> {
-  List<String> images = [
-    "lib/assets/images/onBoardImage1.svg",
-    "lib/assets/images/onBoardImage1.svg"
-  ];
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyColors.darkBlueColor,
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+        backgroundColor: const Color(0xff2A4BA0),
+        body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const SizedBox(
-                height: 90,
+              const TopData(),
+              SvgPicture.asset(
+                "lib/assets/images/Imageicon.svg",
+                height: 129,
               ),
-              const Text(
-                "Your holiday\nshopping\ndelivered to Screen\none",
-                style: TextStyle(
-                    fontSize: 32,
-                    fontFamily: "Manrope",
-                    fontWeight: FontWeight.w700,
-                    color: MyColors.onBoardText1),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                "There's something for everyone\nto enjoy with Sweet Shop\nFavourites Screen 1",
-                style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: "Manrope",
-                    fontWeight: FontWeight.w500,
-                    color: MyColors.onBoardText2),
-              ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
-              // PageView.builder(
-              //   itemBuilder: (context, index) {
-              //     return Container(
-              //       height: 150,
-              //       width: 150,
-              //       child: Center(child: SvgPicture.asset(images[index])),
-              //     );
-              //   },
-              //   itemCount: images.length,
-              //   scrollDirection: Axis.horizontal,
-              //   physics: const PageScrollPhysics(),
-              // ),
-              SizedBox(
-                height: 380,
-              ),
-
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MainScreen(),
-                    ),
-                  );
-                },
-                child: const WhiteButton(
-                  height: 80,
-                  width: 270,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: CustomButtonWidget(
                   buttonText: "Get Started",
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const MainScreen(),
+                          ));
+                    });
+                  },
+                  buttonHeight: 70,
+                  buttonWidth: 253,
+                  backgroundColor: const Color(0xffFAFBFD),
+                  fontColor: Colors.black,
+                  iconimage: "lib/assets/images/Arrow.svg",
                 ),
-              ),
+              )
             ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

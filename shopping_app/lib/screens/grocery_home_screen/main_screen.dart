@@ -22,7 +22,7 @@ class MainScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: ListView(
                 children: [
-                  // const SizedBox(height: 5),
+                  const SizedBox(height: 15),
                   // Horizontal scrollable section 1 (discountFoodCardList)
                   Container(
                     height: 150,
@@ -84,7 +84,7 @@ class MainScreen extends StatelessWidget {
               ),
             ),
           ),
-          const NavBar()
+          BottomNavBar()
         ],
       ),
     );

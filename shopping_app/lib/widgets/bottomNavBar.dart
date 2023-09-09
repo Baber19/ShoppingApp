@@ -1,43 +1,84 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/constants/colors.dart';
 import 'package:shopping_app/screens/categories_screen_1/category_screen_1.dart';
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:shopping_app/screens/fav_product_screen/fav_product_screen.dart';
+import 'package:shopping_app/screens/grocery_home_screen/main_screen.dart';
 
-class NavBar extends StatefulWidget {
-  const NavBar({super.key});
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
 
   @override
-  State<NavBar> createState() => _NavBarState();
+  State<BottomNavBar> createState() => _BottomNavBarState();
 }
 
-class _NavBarState extends State<NavBar> {
+class _BottomNavBarState extends State<BottomNavBar> {
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
+      iconSize: 30,
+      onTap: (int newIndex) {
+        setState(() {
+          _currentIndex = newIndex;
+        });
+      },
       items: [
-        const BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled), label: "Home"),
         BottomNavigationBarItem(
-          icon: GestureDetector(
+            icon: GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CategoryScreen1(),
+                    builder: (context) => MainScreen(),
                   ),
                 );
               },
-              child: const Icon(Icons.list_outlined)),
-          label: "Categories",
-        ),
-        const BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border_outlined), label: "Favourite"),
-        const BottomNavigationBarItem(
-            icon: Icon(
-              Icons.more_vert,
-              color: Colors.black,
+              child: const Icon(
+                Icons.home,
+                color: MyColors.darkYellowColor,
+              ),
             ),
-            label: "more"),
+            label: "Home"),
+        BottomNavigationBarItem(
+            icon: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CategoryScreen1(),
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.list,
+                color: MyColors.darkYellowColor,
+              ),
+            ),
+            label: "Categories"),
+        BottomNavigationBarItem(
+            icon: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FavProductsScreen(),
+                  ),
+                );
+              },
+              child: const Icon(
+                Icons.favorite,
+                color: MyColors.darkYellowColor,
+              ),
+            ),
+            label: "fav"),
+        const BottomNavigationBarItem(
+          icon: Icon(
+            Icons.more_vert,
+            color: MyColors.darkYellowColor,
+          ),
+          label: "More",
+        ),
       ],
     );
   }

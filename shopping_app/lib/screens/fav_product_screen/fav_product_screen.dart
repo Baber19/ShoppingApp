@@ -44,7 +44,7 @@ class _FavProductsScreenState extends State<FavProductsScreen> {
                 ),
               ),
             ),
-            const NavBar()
+            const BottomNavBar(),
           ],
         ));
   }

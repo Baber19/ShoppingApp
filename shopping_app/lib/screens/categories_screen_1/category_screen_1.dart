@@ -23,7 +23,7 @@ class _CategoryScreen1State extends State<CategoryScreen1> {
             ),
             const CategoryScreen1TopBanner(),
             const SizedBox(
-              width: 30,
+              height: 10,
             ),
             Expanded(
               flex: 1,
@@ -42,7 +42,7 @@ class _CategoryScreen1State extends State<CategoryScreen1> {
                 ),
               ),
             ),
-            const NavBar()
+            BottomNavBar()
           ],
         ));
   }
