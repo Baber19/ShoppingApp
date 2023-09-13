@@ -40,7 +40,7 @@ class _TopBannerState extends State<TopBanner> {
                           builder: (context) => const AddToCartScreen()),
                     );
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.shopping_cart,
                     color: Colors.white,
                     size: 24,

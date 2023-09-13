@@ -4,44 +4,6 @@ import 'package:shopping_app/constants/colors.dart';
 
 import '../../product_screen/product_screen.dart';
 
-List<CategoryScreen2FoodCard> categoryScreen2FoodCardList = const [
-  CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/fish.svg",
-    itemTitle: "Big & Small Fishes",
-    itemType: "Fresh from Sea",
-    itemPrice: "\$36/KG",
-    containerColor: Color.fromARGB(255, 231, 223, 151),
-  ),
-  CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/fish.svg",
-    itemTitle: "Big & Small Fishes",
-    itemType: "Fresh from Sea",
-    itemPrice: "\$36/KG",
-    containerColor: Color.fromARGB(255, 127, 43, 180),
-  ),
-  CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/fish.svg",
-    itemTitle: "Big & Small Fishes",
-    itemType: "Fresh from Sea",
-    itemPrice: "\$36/KG",
-    containerColor: Color.fromARGB(255, 114, 208, 122),
-  ),
-  CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/fish.svg",
-    itemTitle: "Big & Small Fishes",
-    itemType: "Fresh from Sea",
-    itemPrice: "\$36/KG",
-    containerColor: Color.fromARGB(255, 183, 120, 78),
-  ),
-  CategoryScreen2FoodCard(
-    itemImage: "lib/assets/images/fish.svg",
-    itemTitle: "Big & Small Fishes",
-    itemType: "Fresh from Sea",
-    itemPrice: "\$36/KG",
-    containerColor: Color.fromARGB(255, 97, 166, 191),
-  ),
-];
-
 class CategoryScreen2FoodCard extends StatefulWidget {
   final String itemImage;
   final String itemTitle;

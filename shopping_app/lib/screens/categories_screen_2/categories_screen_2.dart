@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/Data/productsData.dart';
 
 import 'Widgets/categoriesScreen2FoodCard.dart';
 import 'Widgets/itemType.dart';
@@ -38,10 +39,19 @@ class _CategoriesScreen2State extends State<CategoriesScreen2> {
               itemCount: categoryScreen2FoodCardList.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 10),
-                  child: categoryScreen2FoodCardList[index],
-                );
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0, vertical: 10),
+                    child: CategoryScreen2FoodCard(
+                        itemType: categoryScreen2FoodCardList[index]
+                            ["itemType"],
+                        itemImage: categoryScreen2FoodCardList[index]
+                            ["itemImage"],
+                        itemPrice: categoryScreen2FoodCardList[index]
+                            ["itemPrice"],
+                        itemTitle: categoryScreen2FoodCardList[index]
+                            ["itemTitle"],
+                        containerColor: categoryScreen2FoodCardList[index]
+                            ["containerColor"]));
               },
             ),
           ),

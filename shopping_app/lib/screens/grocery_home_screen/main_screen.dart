@@ -7,6 +7,8 @@ import 'package:shopping_app/screens/grocery_home_screen/Widgets/subFoodCart.dar
 import 'package:shopping_app/screens/grocery_home_screen/Widgets/topBanner.dart';
 import 'package:shopping_app/widgets/bottomNavBar.dart';
 
+import '../../Data/productsData.dart';
+
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
@@ -51,7 +53,11 @@ class MainScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: subFoodCardList.length,
                       itemBuilder: (BuildContext context, int index) {
-                        return subFoodCardList[index];
+                        return SubFoodCard(
+                            index: index,
+                            itemImage: subFoodCardList[index]["itemImage"],
+                            itemTitle: subFoodCardList[index]["itemTitle"],
+                            itemPrice: subFoodCardList[index]["itemPrice"]);
                       },
                     ),
                   ),
@@ -72,7 +78,12 @@ class MainScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: subFoodCard2List.length,
                       itemBuilder: (BuildContext context, int index) {
-                        return subFoodCard2List[index];
+                        return SubFoodCard2(
+                            itemImage: subFoodCard2List[index]["itemImage"],
+                            itemTitle: subFoodCard2List[index]["itemTitle"],
+                            itemPrice: subFoodCard2List[index]["itemPrice"],
+                            itemQuantity: subFoodCard2List[index]
+                                ["itemQuantity"]);
                       },
                     ),
                   ),

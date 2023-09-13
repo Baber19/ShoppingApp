@@ -3,13 +3,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/Data/productsData.dart';
 import 'package:shopping_app/constants/colors.dart';
 
-class SubFoodCard extends StatefulWidget {
+class FavProductsFoodCard extends StatefulWidget {
   final String itemImage;
   final String itemTitle;
   final String itemPrice;
   final int index;
 
-  const SubFoodCard({
+  const FavProductsFoodCard({
     Key? key,
     required this.itemImage,
     required this.itemTitle,
@@ -18,12 +18,11 @@ class SubFoodCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<SubFoodCard> createState() => _SubFoodCardState();
+  State<FavProductsFoodCard> createState() => _FavProductsFoodCardState();
 }
 
-class _SubFoodCardState extends State<SubFoodCard> {
-  bool isFavPressed = true;
-  bool isAdded = true;
+class _FavProductsFoodCardState extends State<FavProductsFoodCard> {
+  bool isFavPressed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -122,16 +121,20 @@ class _SubFoodCardState extends State<SubFoodCard> {
                             IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    cartItems
-                                        .add(subFoodCardList[widget.index]);
+                                    if (subFoodCardList[widget.index]
+                                        ["isFav"]) {
+                                      favItems
+                                          .add(subFoodCardList[widget.index]);
+                                    } else {
+                                      favItems.remove(
+                                          subFoodCardList[widget.index]);
+                                    }
                                   });
                                 },
-                                icon: Icon(
-                                  isAdded
-                                      ? Icons.add_circle_outlined
-                                      : Icons.done_outline_rounded,
+                                icon: const Icon(
+                                  Icons.add_circle_outlined,
                                   color: MyColors.darkBlueColor,
-                                  size: 20,
+                                  size: 28,
                                 )),
                           ],
                         ),
@@ -145,16 +148,7 @@ class _SubFoodCardState extends State<SubFoodCard> {
               top: 5,
               left: 5,
               child: IconButton(
-                onPressed: () {
-                  setState(() {
-                    if (subFoodCardList[widget.index]["isFav"]) {
-                      favItems.remove(subFoodCardList[widget.index]);
-                      print("Itemremoved");
-                    } else {
-                      favItems.add(subFoodCardList[widget.index]);
-                    }
-                  });
-                },
+                onPressed: () {},
                 icon: isFavPressed
                     ? const Icon(Icons.favorite_border)
                     : const Icon(Icons.favorite),

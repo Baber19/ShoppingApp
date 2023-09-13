@@ -2,43 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/colors.dart';
 
-List<SubFoodCard2> subFoodCard2List = const [
-  SubFoodCard2(
-      itemImage: "lib/assets/images/fruits.svg",
-      itemTitle: "\$325",
-      itemPrice: "Orange Package 1",
-      itemQuantity: "1 Bundle"),
-  SubFoodCard2(
-      itemImage: "lib/assets/images/fish.svg",
-      itemTitle: "\$215",
-      itemPrice: "Orange Package 1",
-      itemQuantity: "1 Bundle"),
-  SubFoodCard2(
-      itemImage: "lib/assets/images/meat.svg",
-      itemTitle: "\$195",
-      itemPrice: "Orange Package 1",
-      itemQuantity: "1 Bundle"),
-  SubFoodCard2(
-      itemImage: "lib/assets/images/veg.svg",
-      itemTitle: "\$241",
-      itemPrice: "Orange Package 1",
-      itemQuantity: "1 Bundle"),
-  SubFoodCard2(
-      itemImage: "lib/assets/images/fish.svg",
-      itemTitle: "\$325",
-      itemPrice: "Orange Package 1",
-      itemQuantity: "1 Bundle"),
-  SubFoodCard2(
-      itemImage: "lib/assets/images/meat.svg",
-      itemTitle: "\$325",
-      itemPrice: "Orange Package 1",
-      itemQuantity: "1 Bundle"),
-];
-
 class SubFoodCard2 extends StatefulWidget {
   final String itemImage;
-  final String itemTitle;
   final String itemPrice;
+  final String itemTitle;
   final String itemQuantity;
 
   const SubFoodCard2({

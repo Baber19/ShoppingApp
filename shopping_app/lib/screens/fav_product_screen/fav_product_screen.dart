@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/Data/productsData.dart';
 import 'package:shopping_app/screens/categories_screen_1/Widgets/categoryScreenFoodCard.dart';
+import 'package:shopping_app/screens/fav_product_screen/Widgets/fav_product_food_card.dart';
 
 import '../../widgets/bottomNavBar.dart';
 import 'Widgets/fav_product_screen_top_banner.dart';
@@ -30,18 +32,27 @@ class _FavProductsScreenState extends State<FavProductsScreen> {
             Expanded(
               flex: 1,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                  ),
-                  itemCount: favProductsCardList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return favProductsCardList[index];
-                  },
-                ),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                child: favItems.isNotEmpty
+                    ? GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 30,
+                        ),
+                        itemCount: favItems.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return FavProductsFoodCard(
+                              index: index,
+                              itemImage: favItems[index]["itemImage"],
+                              itemTitle: favItems[index]["itemTitle"],
+                              itemPrice: favItems[index]["itemPrice"]);
+                        },
+                      )
+                    : Center(
+                        child: Text("You dont Have any Favourite Product(s)")),
               ),
             ),
             const BottomNavBar(),

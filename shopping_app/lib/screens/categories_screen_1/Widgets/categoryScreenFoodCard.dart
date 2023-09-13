@@ -1,50 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shopping_app/Data/productsData.dart';
 import 'package:shopping_app/constants/colors.dart';
 import 'package:shopping_app/screens/categories_screen_2/categories_screen_2.dart';
 
-List<CategoryScreenFoodCard> categoryScreenFoodCardList = [
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/fish.svg",
-    itemTitle: "Fishes",
-    itemType: "From Sea",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/meat.svg",
-    itemTitle: "Meat",
-    itemType: "Organic",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/veg.svg",
-    itemTitle: "Vegitables",
-    itemType: "From Sea",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/fruits.svg",
-    itemTitle: "Fruits",
-    itemType: "Organic",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/fish.svg",
-    itemTitle: "Fishes",
-    itemType: "From Sea",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/meat.svg",
-    itemTitle: "Meat",
-    itemType: "Organic",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/veg.svg",
-    itemTitle: "Fishes",
-    itemType: "From Sea",
-  ),
-  CategoryScreenFoodCard(
-    itemImage: "lib/assets/images/fruits.svg",
-    itemTitle: "Meat",
-    itemType: "Organic",
-  ),
-];
+// List<CategoryScreenFoodCard> categoryScreenFoodCardList = [
+//   CategoryScreenFoodCard(
+//     itemImage: "lib/assets/images/fish.svg",
+//     itemTitle: "Fishes",
+//     itemType: "From Sea",
+//   ),
+//   CategoryScreenFoodCard(
+//     itemImage: "lib/assets/images/meat.svg",
+//     itemTitle: "Meat",
+//     itemType: "Organic",
+//   ),
+//   CategoryScreenFoodCard(
+//     itemImage: "lib/assets/images/veg.svg",
+//     itemTitle: "Vegitables",
+//     itemType: "From Sea",
+//   ),
+//   CategoryScreenFoodCard(
+//     itemImage: "lib/assets/images/fruits.svg",
+//     itemTitle: "Fruits",
+//     itemType: "Organic",
+//   ),
+//   CategoryScreenFoodCard(
+//     itemImage: "lib/assets/images/fish.svg",
+//     itemTitle: "Fishes",
+//     itemType: "From Sea",
+//   ),
+//   CategoryScreenFoodCard(
+//     itemImage: "lib/assets/images/meat.svg",
+//     itemTitle: "Meat",
+//     itemType: "Organic",
+//   ),
+//   CategoryScreenFoodCard(
+//     itemImage: "lib/assets/images/veg.svg",
+//     itemTitle: "Fishes",
+//     itemType: "From Sea",
+//   ),
+//   CategoryScreenFoodCard(
+//     itemImage: "lib/assets/images/fruits.svg",
+//     itemTitle: "Meat",
+//     itemType: "Organic",
+//   ),
+// ];
 
 class CategoryScreenFoodCard extends StatelessWidget {
   final String itemImage;

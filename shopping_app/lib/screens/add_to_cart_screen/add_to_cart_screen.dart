@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shopping_app/Data/productsData.dart';
+import 'package:shopping_app/screens/add_to_cart_screen/Widgets/cart_food_card.dart';
 import 'package:shopping_app/screens/product_details_screen/product_details_screen.dart';
 import 'package:shopping_app/widgets/Buttons/blue_button.dart';
 import 'package:shopping_app/constants/colors.dart';
@@ -38,6 +40,16 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.35,
               child: SvgPicture.asset("lib/assets/images/addtocartbanner.svg"),
+            ),
+            ListView.builder(
+              itemCount: cartItems.length,
+              itemBuilder: (BuildContext context, int index) {
+                return CartFoodCard(
+                  itemImage: cartItems[index]["itemImage"],
+                  itemTitle: cartItems[index]["itemTitle"],
+                  itemPrice: cartItems[index]["itemPtice"],
+                );
+              },
             ),
             Spacer(),
             GestureDetector(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/categories_screen_1/Widgets/categoryScreenFoodCard.dart';
 
+import '../../Data/productsData.dart';
 import '../../widgets/bottomNavBar.dart';
 import 'Widgets/categoryScreenTopBanner.dart';
 
@@ -35,9 +36,13 @@ class _CategoryScreen1State extends State<CategoryScreen1> {
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
-                  itemCount: categoryScreenFoodCardList.length,
+                  itemCount: CatScreen1FoodCardList.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return categoryScreenFoodCardList[index];
+                    return CategoryScreenFoodCard(
+                      itemImage: CatScreen1FoodCardList[index]["itemImage"],
+                      itemTitle: CatScreen1FoodCardList[index]["itemTitle"],
+                      itemType: CatScreen1FoodCardList[index]["itemType"],
+                    );
                   },
                 ),
               ),
