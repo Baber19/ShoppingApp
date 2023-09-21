@@ -82,6 +82,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     child: SvgPicture.asset(
                         "shopping_app/lib/assets/images/veg.svg"),
                   ),
+                  const SizedBox(
+                    height: 100,
+                  ),
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 20),
                     child: Hero(

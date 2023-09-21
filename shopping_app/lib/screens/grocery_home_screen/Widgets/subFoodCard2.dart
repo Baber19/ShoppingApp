@@ -22,6 +22,7 @@ class SubFoodCard2 extends StatefulWidget {
 
 class _SubFoodCardState2 extends State<SubFoodCard2> {
   bool isFavPressed = true;
+  bool isAddedToCart = true;
 
   @override
   Widget build(BuildContext context) {

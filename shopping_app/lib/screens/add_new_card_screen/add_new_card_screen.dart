@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/add_new_card_screen/Widget/card_text_field.dart';
 import 'package:shopping_app/screens/check_out_screen/check_out_screen.dart';
+import 'package:shopping_app/screens/orders_screen/orders.dart';
 import 'package:shopping_app/widgets/Buttons/blue_button.dart';
 
 import '../../constants/colors.dart';
@@ -284,7 +285,7 @@ class AddNewCardScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ConfirmedOrderScreen(),
+                              builder: (context) => OrderView(),
                             ),
                           );
                         },

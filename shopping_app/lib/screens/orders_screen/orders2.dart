@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shopping_app/screens/check_out_screen/check_out_screen.dart';
 
-class AddToCartScreen extends StatefulWidget {
-  const AddToCartScreen({super.key});
+import 'trackorder.dart';
+
+class Order2 extends StatefulWidget {
+  const Order2({super.key});
 
   @override
-  State<AddToCartScreen> createState() => _AddToCartScreenState();
+  State<Order2> createState() => _Order2State();
 }
 
-class _AddToCartScreenState extends State<AddToCartScreen> {
+class _Order2State extends State<Order2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +20,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const CheckOutScreen(),
+              builder: (context) => const TrackOrder(),
             ),
           );
         },
@@ -27,7 +28,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: SvgPicture.asset(
-            "lib/assets/images/CartOffer.svg",
+            "lib/assets/images/Orders2.svg",
           ),
         ),
       ),

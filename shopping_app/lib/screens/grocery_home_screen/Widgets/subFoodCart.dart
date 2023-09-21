@@ -121,10 +121,13 @@ class _SubFoodCardState extends State<SubFoodCard> {
                             const Spacer(),
                             IconButton(
                                 onPressed: () {
-                                  setState(() {
-                                    cartItems
-                                        .add(subFoodCardList[widget.index]);
-                                  });
+                                  setState(
+                                    () {
+                                      isAdded = !isAdded;
+                                      cartItems
+                                          .add(subFoodCardList[widget.index]);
+                                    },
+                                  );
                                 },
                                 icon: Icon(
                                   isAdded
@@ -147,6 +150,7 @@ class _SubFoodCardState extends State<SubFoodCard> {
               child: IconButton(
                 onPressed: () {
                   setState(() {
+                    isFavPressed = !isFavPressed;
                     if (subFoodCardList[widget.index]["isFav"]) {
                       favItems.remove(subFoodCardList[widget.index]);
                       print("Itemremoved");

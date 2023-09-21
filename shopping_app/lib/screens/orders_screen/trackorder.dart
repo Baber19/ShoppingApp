@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shopping_app/screens/check_out_screen/check_out_screen.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:shopping_app/screens/grocery_home_screen/main_screen.dart';
 
-class AddToCartScreen extends StatefulWidget {
-  const AddToCartScreen({super.key});
+class TrackOrder extends StatefulWidget {
+  const TrackOrder({super.key});
 
   @override
-  State<AddToCartScreen> createState() => _AddToCartScreenState();
+  State<TrackOrder> createState() => _TrackOrderState();
 }
 
-class _AddToCartScreenState extends State<AddToCartScreen> {
+class _TrackOrderState extends State<TrackOrder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const CheckOutScreen(),
+              builder: (context) => const MainScreen(),
             ),
           );
         },
@@ -27,7 +27,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: SvgPicture.asset(
-            "lib/assets/images/CartOffer.svg",
+            "lib/assets/images/TrackOrder.svg",
           ),
         ),
       ),

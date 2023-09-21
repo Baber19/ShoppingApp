@@ -33,14 +33,14 @@ class _FavProductsScreenState extends State<FavProductsScreen> {
               flex: 1,
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: favItems.isNotEmpty
                     ? GridView.builder(
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          crossAxisSpacing: 10,
-                          mainAxisSpacing: 30,
+                          crossAxisSpacing: 20,
+                          mainAxisSpacing: 20,
                         ),
                         itemCount: favItems.length,
                         itemBuilder: (BuildContext context, int index) {

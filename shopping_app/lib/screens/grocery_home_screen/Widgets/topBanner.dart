@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/Data/productsData.dart';
+import 'package:badges/badges.dart' as prefix;
+
 import 'package:shopping_app/screens/add_to_cart_screen/add_to_cart_screen.dart';
 
 import '../../../constants/colors.dart';
@@ -40,10 +43,12 @@ class _TopBannerState extends State<TopBanner> {
                           builder: (context) => const AddToCartScreen()),
                     );
                   },
-                  child: const Icon(
-                    Icons.shopping_cart,
-                    color: Colors.white,
-                    size: 24,
+                  child: const Badge(
+                    child: Icon(
+                      Icons.shopping_cart,
+                      color: Colors.white,
+                      size: 24,
+                    ),
                   ),
                 ),
               ],
